@@ -13,7 +13,9 @@
 
   <div>
     <form [formGroup]="form">
-      <ion-item>
+      <ion-item
+        [ngClass]="{'popover-invalid': form.controls['date'].touched && !form.controls['date'].valid}"
+      >
         <ion-label>Pick date</ion-label>
         <ion-input
           value="{{ form.controls['date'].value| date: 'dd.MM.yyyy' }}"
